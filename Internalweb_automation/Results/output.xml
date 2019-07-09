@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190227 13:51:00.344" generator="Robot 3.1.1 (Python 2.7.15 on darwin)">
+<suite source="/Users/vitha/Documents/Stage/testing/Tests" id="s1" name="Tests">
+<suite source="/Users/vitha/Documents/Stage/testing/Tests/home.robot" id="s1-s1" name="Home">
+<test id="s1-s1-t1" name="Open 'host an event' on body home">
+<kw type="setup" name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Keywords.Open Cohive Website</arg>
+</arguments>
+<kw name="Open Cohive Website" library="Keywords">
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${url.${environment}}</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20190227 13:51:00.629" level="INFO">${url} = https://www.stage.tech.evhive.info</msg>
+<status status="PASS" endtime="20190227 13:51:00.629" starttime="20190227 13:51:00.628"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190227 13:51:00.629" level="INFO">Opening browser 'chrome' to base url 'https://www.stage.tech.evhive.info'.</msg>
+<status status="PASS" endtime="20190227 13:51:07.895" starttime="20190227 13:51:00.629"></status>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" endtime="20190227 13:51:07.913" starttime="20190227 13:51:07.896"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${setSeleniumSpeed}</arg>
+</arguments>
+<status status="PASS" endtime="20190227 13:51:07.913" starttime="20190227 13:51:07.913"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:07.914" starttime="20190227 13:51:00.628"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:07.914" starttime="20190227 13:51:00.627"></status>
+</kw>
+<kw name="click close promo if pop up displayed" library="home">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${close-popup-promo}</arg>
+</arguments>
+<assign>
+<var>${promo}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${close-popup-promo}</arg>
+</arguments>
+<msg timestamp="20190227 13:51:08.951" level="INFO">Element '//*[@class="jsx-3637290389 close-btn"]' is displayed.</msg>
+<status status="PASS" endtime="20190227 13:51:08.952" starttime="20190227 13:51:07.915"></status>
+</kw>
+<msg timestamp="20190227 13:51:08.952" level="INFO">${promo} = True</msg>
+<status status="PASS" endtime="20190227 13:51:08.952" starttime="20190227 13:51:07.915"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${promo}</arg>
+<arg>close pop up promo on home screen</arg>
+</arguments>
+<kw name="close pop up promo on home screen" library="home">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${close-popup-promo}</arg>
+</arguments>
+<msg timestamp="20190227 13:51:08.954" level="INFO">Clicking element '//*[@class="jsx-3637290389 close-btn"]'.</msg>
+<status status="PASS" endtime="20190227 13:51:10.013" starttime="20190227 13:51:08.954"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:10.013" starttime="20190227 13:51:08.953"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:10.013" starttime="20190227 13:51:08.953"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:10.013" starttime="20190227 13:51:07.914"></status>
+</kw>
+<kw name="click 'host an event' on body home" library="home">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${host-an-event}</arg>
+</arguments>
+<status status="PASS" endtime="20190227 13:51:11.056" starttime="20190227 13:51:10.014"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${host-an-event}</arg>
+<arg>timeout=5s</arg>
+</arguments>
+<status status="PASS" endtime="20190227 13:51:12.086" starttime="20190227 13:51:11.057"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>6s</arg>
+</arguments>
+<msg timestamp="20190227 13:51:18.087" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" endtime="20190227 13:51:18.088" starttime="20190227 13:51:12.086"></status>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<doc>Sets focus to element identified by ``locator``.</doc>
+<arguments>
+<arg>${host-an-event}</arg>
+</arguments>
+<status status="PASS" endtime="20190227 13:51:19.109" starttime="20190227 13:51:18.088"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${host-an-event}</arg>
+</arguments>
+<msg timestamp="20190227 13:51:19.110" level="INFO">Clicking element 'css=a[href="/spaces/event-space"]'.</msg>
+<status status="PASS" endtime="20190227 13:51:20.160" starttime="20190227 13:51:19.109"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:20.161" starttime="20190227 13:51:10.013"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20190227 13:51:23.164" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20190227 13:51:23.164" starttime="20190227 13:51:20.161"></status>
+</kw>
+<kw type="teardown" name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Keywords.Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="Keywords">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" endtime="20190227 13:51:23.696" starttime="20190227 13:51:23.166"></status>
+</kw>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20190227 13:51:24.270" starttime="20190227 13:51:23.697"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:24.270" starttime="20190227 13:51:23.166"></status>
+</kw>
+<status status="PASS" endtime="20190227 13:51:24.270" starttime="20190227 13:51:23.165"></status>
+</kw>
+<tags>
+<tag>this</tag>
+</tags>
+<status status="PASS" endtime="20190227 13:51:24.270" critical="yes" starttime="20190227 13:51:00.627"></status>
+</test>
+<doc>Testcase for dipslay home</doc>
+<status status="PASS" endtime="20190227 13:51:24.271" starttime="20190227 13:51:00.363"></status>
+</suite>
+<status status="PASS" endtime="20190227 13:51:24.273" starttime="20190227 13:51:00.346"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">this</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
+<stat fail="0" id="s1-s1" name="Home" pass="1">Tests.Home</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
